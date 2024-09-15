@@ -1,6 +1,14 @@
+import React, { useState } from 'react';
 import Bg from "../Component/Bg";
+import Aipage from './Pages/PromptPage';
 
 const Hero = () => {
+  const [showAipage, setShowAipage] = useState(false);
+
+  const handleAiPage = () => {
+    setShowAipage(true);
+  };
+
   return (
     <div className="relative overflow-hidden bg-black py-6">
       {/* Bg Component */}
@@ -55,15 +63,22 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="mt-8 gap-3 flex justify-center">
-          <a
+          <button
             className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 focus:outline-none focus:from-violet-600 focus:to-blue-600 border border-transparent text-white text-sm font-medium rounded-full py-3 px-4"
-            href="./ai"
+            onClick={handleAiPage}
           >
             <i className="fab fa-google fa-2x"></i>
             Continue with Google
-          </a>
+          </button>
         </div>
         {/* End Buttons */}
+
+        {/* Render AiPage when button is clicked */}
+        {showAipage && (
+          <div className="mt-10">
+            <Aipage />
+          </div>
+        )}
       </div>
     </div>
   );
