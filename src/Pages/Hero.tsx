@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Bg from "../Component/Bg";
-import Aipage from './Pages/PromptPage';
 
 const Hero = () => {
-  const [showAipage, setShowAipage] = useState(false);
+  const navigate = useNavigate();
 
-  const handleAiPage = () => {
-    setShowAipage(true);
+  const handleRedirect = () => {
+    // Redirect to the PromptPage
+    navigate('/ai');
   };
 
   return (
@@ -65,20 +66,13 @@ const Hero = () => {
         <div className="mt-8 gap-3 flex justify-center">
           <button
             className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 focus:outline-none focus:from-violet-600 focus:to-blue-600 border border-transparent text-white text-sm font-medium rounded-full py-3 px-4"
-            onClick={handleAiPage}
+            onClick={handleRedirect}
           >
             <i className="fab fa-google fa-2x"></i>
             Continue with Google
           </button>
         </div>
         {/* End Buttons */}
-
-        {/* Render AiPage when button is clicked */}
-        {showAipage && (
-          <div className="mt-10">
-            <Aipage />
-          </div>
-        )}
       </div>
     </div>
   );
