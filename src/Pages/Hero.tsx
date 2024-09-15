@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Bg from "../Component/Bg";
 import Aipage from './Pages/PromptPage';
 
