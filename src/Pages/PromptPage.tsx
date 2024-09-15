@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import SlideBar from '../Component/Slidebar'; // Adjust the import path as needed
 
 const Aipage = () => {
